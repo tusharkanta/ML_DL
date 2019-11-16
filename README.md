@@ -1,5 +1,5 @@
 # ML_DL
-Accuracy score on test data set: [0.07118246783003451, 0.9907]
+Accuracy score on test data set: [0.041218858633232276, 0.991]
 
 1. Convolution - Process of going through the pixels of input image to reshape it for further analysis
 2. Filters/Kernels - Filters (also called Kernels) used to extract distinctive features of an image
