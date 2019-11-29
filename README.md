@@ -34,7 +34,6 @@ model.add(Flatten())
 #model.add(Dense(32, activation='relu'))
 model.add(Dense(num_classes, activation='softmax'))
 
-50 epoch log
 Epoch 1/50
 781/781 [==============================] - 48s 62ms/step - loss: 1.3600 - acc: 0.5124 - val_loss: 1.4175 - val_acc: 0.5248
 Epoch 2/50
