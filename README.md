@@ -1,11 +1,11 @@
---Base final validation accuracy:
+Base final validation accuracy:
 
 Epoch 50/50
 390/390 [==============================] - 21s 53ms/step - loss: 0.3204 - acc: 0.8949 - val_loss: 0.6423 - val_acc: 0.8169
 Model took 1026.69 seconds to train
 Accuracy on test data is: 81.69
 
---New model defintion with RF and channel size
+New model defintion with RF and channel size
 
 model.add(BatchNormalization())
 model.add(SeparableConv2D(filters = 32, depth_multiplier = 4,kernel_size=(3, 3))) #channel Op: 30*30*32 RF: 5
@@ -34,7 +34,7 @@ model.add(Flatten())
 #model.add(Dense(32, activation='relu'))
 model.add(Dense(num_classes, activation='softmax'))
 
---50 epoch log
+50 epoch log
 Epoch 1/50
 781/781 [==============================] - 48s 62ms/step - loss: 1.3600 - acc: 0.5124 - val_loss: 1.4175 - val_acc: 0.5248
 Epoch 2/50
