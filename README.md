@@ -1,3 +1,10 @@
+The best validationa accuracy scores are as follows:
+
+val_gender_output_acc: 0.5353 - val_image_quality_output_acc: 0.5580 - val_age_output_acc: 0.3917 - val_weight_output_acc: 0.6462 - val_bag_output_acc: 0.5599 - val_footwear_output_acc: 0.5156 - val_pose_output_acc: 0.6150 - val_emotion_output_acc: 0.7061
+
+=============================================================================
+
+
 WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/math_grad.py:1424: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Use tf.where in 2.0, which has the same broadcast rule as np.where
