@@ -1,1 +1,2 @@
-Best validation score after 5th step is 99.42%. This is with a batch size of 24 and LR of 0.008
+![Validation Accuracy changes Image]https://github.com/tusharkanta/ML_DL/blob/eva/S6/s6_accuracy1.png
+![Loss changes Image]https://github.com/tusharkanta/ML_DL/blob/eva/S6/s6_loss1.png
