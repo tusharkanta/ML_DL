@@ -1,3 +1,19 @@
+
+=========================================
+Final validation accuracy for S9: 89.11%
+=========================================
+Below are .py files imported in notebook S9_Final.ipynb
+
+dataloader12.py	- used for loading data along with albumentations\
+plotimagefinal.py - used for plotting images\
+modeldefresnetfinal.py	- model definition\
+modeltraintest16.py	- definition of train and test with model, train and test data\
+utils.py	- utilities file for gradcam, image plotting, prediction etc\
+lr_finder.py	- script for finding start learning rate\
+gradcamfl.py - Gradcam main class file \
+gradcamresult8.py - Gradcam code for output
+
+
 =========================================
 Final validation accuracy for S9: 89.83%
 =========================================
