@@ -1,6 +1,6 @@
 
 =========================================
-Final validation accuracy for S9: 89.11%
+Final validation accuracy for S10: 89.11%
 =========================================
 Below are .py files imported in notebook S9_Final.ipynb
 
