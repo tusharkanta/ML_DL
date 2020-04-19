@@ -1,0 +1,863 @@
+{
+	"0.jpg34448": {
+		"filename": "0.jpg",                        ============= image file name
+		"size": 34448,                              ============= image size in bytes
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",                         ================ shape attrobute type rectangle
+				"x": 83,                               =================== x-coordinate in pixels of boundig box
+				"y": 27,                               =================== y-coordinate in pixels of bounding box
+				"width": 289,                         ======================= width in pixel of bounding box
+				"height": 275                         ==================== height in pixel of the bounding box
+			},
+			"region_attributes": {
+				"class": "dog"                       ================== class attribute of the bounding box
+			}
+		}],
+		"file_attributes": {}
+	},
+	"1.jpg26799": {
+		"filename": "1.jpg",
+		"size": 26799,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 38,
+				"y": 40,
+				"width": 265,
+				"height": 434
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"10.jpg36637": {
+		"filename": "10.jpg",
+		"size": 36637,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 21,
+				"y": 16,
+				"width": 232,
+				"height": 242
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"11.jpg6025": {
+		"filename": "11.jpg",
+		"size": 6025,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 13,
+				"y": 11,
+				"width": 114,
+				"height": 85
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"12.jpg8203": {
+		"filename": "12.jpg",
+		"size": 8203,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 68,
+				"y": 64,
+				"width": 2,
+				"height": 47
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}, {
+			"shape_attributes": {
+				"name": "rect",
+				"x": 3,
+				"y": 2,
+				"width": 88,
+				"height": 153
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"13.jpg109459": {
+		"filename": "13.jpg",
+		"size": 109459,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 45,
+				"y": 3,
+				"width": 304,
+				"height": 418
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"14.jpg38665": {
+		"filename": "14.jpg",
+		"size": 38665,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 42,
+				"y": 34,
+				"width": 432,
+				"height": 313
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"15.jpg22713": {
+		"filename": "15.jpg",
+		"size": 22713,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 7,
+				"y": 40,
+				"width": 486,
+				"height": 318
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"16.jpg44651": {
+		"filename": "16.jpg",
+		"size": 44651,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 153,
+				"y": 55,
+				"width": 309,
+				"height": 305
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"17.jpg19479": {
+		"filename": "17.jpg",
+		"size": 19479,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 28,
+				"y": 27,
+				"width": 206,
+				"height": 290
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"100.jpg24746": {
+		"filename": "100.jpg",
+		"size": 24746,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 72,
+				"y": 44,
+				"width": 318,
+				"height": 329
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"101.jpg25012": {
+		"filename": "101.jpg",
+		"size": 25012,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 56,
+				"y": 46,
+				"width": 337,
+				"height": 442
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"102.jpg27394": {
+		"filename": "102.jpg",
+		"size": 27394,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 43,
+				"y": 5,
+				"width": 447,
+				"height": 357
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"103.jpg17542": {
+		"filename": "103.jpg",
+		"size": 17542,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 99,
+				"y": 24,
+				"width": 333,
+				"height": 382
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"104.jpg17544": {
+		"filename": "104.jpg",
+		"size": 17544,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 69,
+				"y": 4,
+				"width": 420,
+				"height": 351
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"105.jpg13146": {
+		"filename": "105.jpg",
+		"size": 13146,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 16,
+				"y": 4,
+				"width": 145,
+				"height": 190
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"106.jpg22479": {
+		"filename": "106.jpg",
+		"size": 22479,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 76,
+				"y": 6,
+				"width": 249,
+				"height": 254
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"107.jpg39052": {
+		"filename": "107.jpg",
+		"size": 39052,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 29,
+				"y": 14,
+				"width": 414,
+				"height": 420
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"108.jpg90127": {
+		"filename": "108.jpg",
+		"size": 90127,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 12,
+				"y": 8,
+				"width": 233,
+				"height": 464
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"109.jpg22409": {
+		"filename": "109.jpg",
+		"size": 22409,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 16,
+				"y": 16,
+				"width": 394,
+				"height": 239
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"110.jpg37413": {
+		"filename": "110.jpg",
+		"size": 37413,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 214,
+				"y": 92,
+				"width": 171,
+				"height": 223
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"111.jpg34407": {
+		"filename": "111.jpg",
+		"size": 34407,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 19,
+				"y": 64,
+				"width": 354,
+				"height": 190
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"112.jpg24889": {
+		"filename": "112.jpg",
+		"size": 24889,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 189,
+				"y": 21,
+				"width": 267,
+				"height": 317
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"113.jpg19720": {
+		"filename": "113.jpg",
+		"size": 19720,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 45,
+				"y": 56,
+				"width": 273,
+				"height": 416
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"114.jpg46426": {
+		"filename": "114.jpg",
+		"size": 46426,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 121,
+				"y": 18,
+				"width": 266,
+				"height": 352
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"115.jpg33031": {
+		"filename": "115.jpg",
+		"size": 33031,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 45,
+				"y": 37,
+				"width": 275,
+				"height": 427
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"116.jpg15417": {
+		"filename": "116.jpg",
+		"size": 15417,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 42,
+				"y": 4,
+				"width": 185,
+				"height": 339
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"117.jpg22795": {
+		"filename": "117.jpg",
+		"size": 22795,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 30,
+				"y": 9,
+				"width": 431,
+				"height": 413
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"118.jpg47771": {
+		"filename": "118.jpg",
+		"size": 47771,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 10,
+				"y": 1,
+				"width": 284,
+				"height": 389
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"119.jpg135100": {
+		"filename": "119.jpg",
+		"size": 135100,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 21,
+				"y": 14,
+				"width": 258,
+				"height": 381
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"120.jpg33521": {
+		"filename": "120.jpg",
+		"size": 33521,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 167,
+				"y": 34,
+				"width": 231,
+				"height": 439
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"121.jpg43339": {
+		"filename": "121.jpg",
+		"size": 43339,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 43,
+				"y": 19,
+				"width": 447,
+				"height": 306
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"122.jpg35803": {
+		"filename": "122.jpg",
+		"size": 35803,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 55,
+				"y": 7,
+				"width": 292,
+				"height": 255
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"123.jpg30501": {
+		"filename": "123.jpg",
+		"size": 30501,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 52,
+				"y": 36,
+				"width": 427,
+				"height": 330
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"124.jpg31917": {
+		"filename": "124.jpg",
+		"size": 31917,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 111,
+				"y": 46,
+				"width": 166,
+				"height": 252
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"125.jpg45566": {
+		"filename": "125.jpg",
+		"size": 45566,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 18,
+				"y": 6,
+				"width": 297,
+				"height": 352
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"126.jpg11470": {
+		"filename": "126.jpg",
+		"size": 11470,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 48,
+				"y": 15,
+				"width": 236,
+				"height": 214
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"127.jpg54713": {
+		"filename": "127.jpg",
+		"size": 54713,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 72,
+				"y": 10,
+				"width": 204,
+				"height": 210
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"128.jpg22978": {
+		"filename": "128.jpg",
+		"size": 22978,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 69,
+				"y": 1,
+				"width": 296,
+				"height": 486
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"129.jpg71838": {
+		"filename": "129.jpg",
+		"size": 71838,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 31,
+				"y": 24,
+				"width": 149,
+				"height": 214
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"130.jpg195861": {
+		"filename": "130.jpg",
+		"size": 195861,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 6,
+				"y": 16,
+				"width": 114,
+				"height": 224
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"131.jpg89170": {
+		"filename": "131.jpg",
+		"size": 89170,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 132,
+				"y": 21,
+				"width": 222,
+				"height": 352
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"132.jpg15865": {
+		"filename": "132.jpg",
+		"size": 15865,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 13,
+				"y": 11,
+				"width": 327,
+				"height": 257
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"133.jpg40697": {
+		"filename": "133.jpg",
+		"size": 40697,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 50,
+				"y": 17,
+				"width": 373,
+				"height": 478
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"134.jpg34896": {
+		"filename": "134.jpg",
+		"size": 34896,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 17,
+				"y": 1,
+				"width": 370,
+				"height": 260
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"135.jpg23201": {
+		"filename": "135.jpg",
+		"size": 23201,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 22,
+				"y": 10,
+				"width": 265,
+				"height": 218
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"136.jpg39071": {
+		"filename": "136.jpg",
+		"size": 39071,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 114,
+				"y": 34,
+				"width": 273,
+				"height": 267
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"137.jpg21553": {
+		"filename": "137.jpg",
+		"size": 21553,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 47,
+				"y": 70,
+				"width": 424,
+				"height": 263
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"138.jpg33376": {
+		"filename": "138.jpg",
+		"size": 33376,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 41,
+				"y": 22,
+				"width": 291,
+				"height": 362
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	},
+	"139.jpg97951": {
+		"filename": "139.jpg",
+		"size": 97951,
+		"regions": [{
+			"shape_attributes": {
+				"name": "rect",
+				"x": 56,
+				"y": 44,
+				"width": 392,
+				"height": 282
+			},
+			"region_attributes": {
+				"class": "dog"
+			}
+		}],
+		"file_attributes": {}
+	}
+}
