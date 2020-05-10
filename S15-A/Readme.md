@@ -195,11 +195,9 @@ Questions asked in 15A:
 - **Submission**
 
   1. Share the link to the readme file for your Assignment 15A. Read the assignment again to make sure you do not miss any part which you need to explain. -2500
-     - https://github.com/praveenraghuvanshi1512/EVA4/tree/master/Session-15/Assignment-15/Assignment-15-A
+     - https://github.com/tusharkanta/ML_DL/blob/eva/S15-A/Readme.md
 
   2. Share the link to your notebook which you used to create this dataset. We are expecting to see how you manipulated images, overlay code, depth predictions. -250
-     - Github: https://github.com/praveenraghuvanshi1512/EVA4/blob/master/Session-15/Assignment-15/Assignment-15-A/EVA_4_S15_A15_A_DenseDepth.ipynb
-- Colab: https://colab.research.google.com/drive/18LZZYmjUTxvxkuXSeZj_duevLTTZ-wMo?usp=sharing
+     - Github: https://github.com/tusharkanta/ML_DL/blob/eva/S15-A/DenseDepth.ipynb
+
   
-  3. Surprise question. -Surprise Marks. 
-     - Hopefully Rohan will bless us :-)
