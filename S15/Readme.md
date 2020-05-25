@@ -39,7 +39,7 @@
 
 - 600k images are divided into 20 zip files  of 30k images each. 20 zip files are named from batch_1.zip to batch_20.zip. Each batch file contains the following folder structure (bg_fg_1, bg_fg_mask_1, depthMap). Each of these 3 folders contains 10k images. 
 
-  ![image-20200525165656117](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\image-20200525165656117.png)
+  ![image-20200525165656117](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/image-20200525165656117.png)
 
 - All 20 zip files were uploaded to google drive link: https://drive.google.com/drive/folders/1mz9kCU1J1E7400dEPEJb_1gPqPaFWXIb?usp=sharing
 
