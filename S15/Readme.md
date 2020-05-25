@@ -1,203 +1,304 @@
-# EVA4 Assignment 15-A - Praveen Raghuvanshi
+# EVA4 Assignment 15
 
-**Team Members**
-
-- Tusharkant Biswal (Tusharkanta_biswal@stragure.com) 
-- V N G Suman Kanukollu (sumankanukollu@gmail.com)
-- Praveen Raghuvanshi (praveenraghuvanshi@gmail.com)
-
-[Github Directory - Assignment -15-A](https://github.com/praveenraghuvanshi1512/EVA4/tree/master/Session-15/Assignment-15/Assignment-15-A)
+[Github Directory - Assignment -15](https://github.com/tusharkanta/ML_DL/tree/eva/S15)
 
 ### Problem
 
-<img src=".\assets\15-A-problem.png" alt="15-A-problem" style="zoom:67%;" />
-
- You must have 100 background, 100x2 (including flip), and you randomly place the foreground on the background 20 times, you have in total 100x200x20 images. 
-
-In total you MUST have:
-
-1. 400k fg_bg images
-2. 400k depth images
-3. 400k mask images
-4. generated from:
-   1. 100 backgrounds
-   2. 100 foregrounds, plus their flips
-   3. 20 random placement on each background.
-5. Now add a readme file on GitHub for Project 15A:
-   1. Create this dataset and share a link to GDrive (publicly available to anyone) in this readme file. 
-   2. Add your dataset statistics:
-      1. Kinds of images (fg, bg, fg_bg, masks, depth)
-      2. Total images of each kind
-      3. The total size of the dataset
-      4. Mean/STD values for your fg_bg, masks and depth images
-   3. Show your dataset the way I have shown above in this readme
-   4. Explain how you created your dataset
-      1. how were fg created with transparency
-      2. how were masks created for fgs
-      3. how did you overlay the fg over bg and created 20 variants
-      4. how did you create your depth images? 
-6. Add the notebook file to your repo, one which you used to create this dataset
-7. Add the notebook file to your repo, one which you used to calculate statistics for this dataset 
-
-Things to remember while creating this dataset:
-
-1. stick to square images to make your life easy. 
-2. We would use these images in a network which would take an fg_bg image AND bg image, and predict your MASK and Depth image. So the input to the network is, say, 224x224xM and 224x224xN, and the output is 224x224xO and 224x224xP. 
-3. pick the resolution of your choice between 150 and 250 for ALL the images 
-
-15A is a group assignment.
-
-Questions asked in 15A:
-
-1. Share the link to the readme file for your Assignment 15A. Read the assignment again to make sure you do not miss any part which you need to explain. -2500
-2. Share the link to your notebook which you used to create this dataset. We are expecting to see how you manipulated images, overlay code, depth predictions. -250
-3. Surprise question. -Surprise Marks. 
+- Assignment description is already shared in the last assignment:
+  - Given an image with foreground objects and background image, predict the depth map as well as a mask for the foreground object. 
+- It is an open problem and you can solve it any way you want. 
+- Let's look at how it can be approached through some examples. 
+- Assignment 14 (15A )was given to start preparing you for assignment 15th. 14th (15A) automatically becomes critical to work on the 15th. 
+- **The 15th assignment is NOT a group assignment**. You are supposed to submit it along. 
+- What happens when you copy? Well, WHAT happens when we copy? WHO knows!
+- This assignment is worth 10,000 points. 
+- Assignment 15th is THE qualifying assignment. 
 
 #### Solution
 
-- This assignment is done as a GROUP and has same submission by all team members. 
+​	**Strategy and steps for Data handling/Model Selection/Loss Function**
 
-- Team members are mentioned at the top
+- Assignment has been executed on a Colab **Pro** GPU machine.
 
-- Assignment has been executed on a Colab GPU machine.
+- Input Data sizes are mentioned in the following table:
 
-- Answers to questions asked as part of assignment
-
-- Now add a readme file on GitHub for Project 15A:
-
-  1. Create this dataset and share a link to GDrive (publicly available to anyone) in this readme file. 
-
-     - Suman    - https://drive.google.com/drive/u/1/folders/1ZXdupMsfZLxgQ2dyToZ3rp6ukjNTMjY7
-     - Praveen  - https://drive.google.com/drive/folders/1-2SntbxewUuyhll20FOz2egPX4dJ5y_Z?usp=sharing
-     - Tushar   - https://drive.google.com/drive/folders/10t7wzl83M_g-CzKWoAjoVOLm6d9GIspL
-
-       
-
-  2. Add your dataset statistics:
-
-     1. Kinds of images (fg, bg, fg_bg, masks, depth)
-        
-          
-        
-          | S.No | Type                                               | Count | Size      | Remarks                                                      |
-          | ---- | -------------------------------------------------- | ----- | --------- | ------------------------------------------------------------ |
-          | 1    | Background (BG) - JPG                              | 100   | 224 x 224 | - Library(50) + Classroom(50)                                |
-          | 2    | Foreground (FG) - JPG                              | 100   | 96 x 96   | Dog breed (Chihuahua, golden_retriever, German_shepherd, Eskimo_dog) |
-          | 3    | Mask - FG                                          | 100   | 96 x 96   |                                                              |
-          | 4    | FG on BG + FG Flip on BG                           | 20000 | 224 x 224 | ???                                                          |
-          | 5    | Random placement 1-FG on 1-BG at 20 locations      | 20    |           |                                                              |
-          | 6    | Random placement 1-FG-Flip on 1-BG at 20 locations | 20    |           |                                                              |
-        | 7    | BG-FG Images                                       | 400K  |           | Includes FG and FG-Flip                                      |
-        | 8    | BG-FG Mask Images                                  | 400K  |           | Includes FG and FG-Flip                                      |
-        | 9    | Dense Depth images for all BG-GF and BG-FG Flip    | 400K  |           |                                                              |
-        | 10   | Total Images                                       | 1200K |           | 400K + 400K + 400K                                           |
-
-     
-
-     - Image Naming structure :
-       
-         | S.No | Format                 | Remarks                                                      |
-         | ---- | ---------------------- | ------------------------------------------------------------ |
-         | 1    | (x)_bg_(y)_fg          | on BG Image (x) FG Image (y) is overlaid                     |
-         | 2    | (x)_bg_(y)_fg_mask     | on BG Image (x) FG Image (y) is overlaid with corresponding mask |
-         | 3    | (x)_bg_(y)_fgFlip      | on BG Image (x) FG Image (y) is Flipped and overlaid         |
-         | 4    | (x)_bg_(y)_fgFlip_mask | on BG Image (x) FG Image (y) is Flipped and overlaid with corresponding mask |
-         
-         
-         
-     - Folder Structure: 
-
-         - We have created 10-Zip files as mentioned above with the image naming structure and distributed among the team.
-         - 10-Zip files consists of the naming structure output_0.zip to output_9.zip (total of 800K Images)
-         - Each zip file consists of 80K images
-           - 20K BG_FG
-           - 20K BG_FG_Flip
-           - 20K BG_FG_mask
-           - 20K BG_FGFlip_mask
-
-     - Dense depthmap strategy
-         - We took the images from the *.zip folder directly to create a depth maps, total of 400K Images..
-         - The depth images are places at below places in respective team members google drive 
-
-     1. Total images of each kind
-        - BG-FG Images : 400k
-        - BG-FG Mask Images : 400k
-        - Dense Depth images for all BG-GF and BG-FG Flip : 400k
-     2. The total size of the dataset
-        - 1200K
-     3. Mean/STD values for your fg_bg, masks and depth images
-        - ???
-
-  3. Show your dataset the way I have shown above in this readme
-
-     1. Select "scene" images. Like the front of shops, etc. We call this background.
-
-        <img src=".\assets\bg_10.png" alt="BG" style="zoom:150%;" />
-
-     2. Find or make 100 images of objects with transparent background. Use GIMP. We call this foreground.
-
-        <img src=".\assets\fg_10.png" alt="image-20200510222747744" style="zoom:150%;" />
-
-     3. Create 100 Masks for the above image. Use GIMP
-
-        <img src=".\assets\fg_mask_10.png" alt="image-20200510223035271" style="zoom:150%;" />
-
-     4. Overlay the foreground on top or background randomly. Flip foreground as well. We call this fg_bg
-
-        - Normal
-
-          <img src=".\assets\fg_bg_10.png" alt="FG_BG" style="zoom:150%;" />
-
-        - Flipped
-
-          <img src=".\assets\fg_bg_10_flipped.png" alt="FG_BG_Flipped" style="zoom:150%;" />
-
-     5. Don't forget to create equivalent masks for these images:
-
-        - Normal
-
-          <img src=".\assets\fg_bg_mask_overlay.png" alt="FG_BG_Overlay" style="zoom:150%;" />
-
-        - Flipped
-
-          <img src=".\assets\bg_fg_mask_flipped.png" alt="." style="zoom:150%;" />
-
-     6. Use this or similar [Depth Models (Links to an external site.)](https://github.com/ialhashim/DenseDepth/blob/master/DenseDepth.ipynb) to create depth maps for the fg_bg images:
-
-        <img src=".\assets\densedepth_10.png" alt="DenseDepth" style="zoom:150%;" />
-
-  4. Explain how you created your dataset
-
-     1. how were fg created with transparency
-        - Power point has been used for creating transparent Images
-     2. how were masks created for fgs
-        - Image Magic has been used to generate masks
-     3. how did you overlay the fg over bg and created 20 variants
-        - PIL module has been used to overlay and flip for 20-variants
-     4. how did you create your depth images?
-        - Used shared DenseDepth git hub repo
-            - Selected BG,FG images 
-            - Overlayed FG on BG
-            - Generated dataset as mentioned above in 10-zip files
-            - We put these zip files in google drive of 3-Team members (4+3+3=10)
-            - Made few changes in the DenseDepth github repo files (test.py,utils.py,*.ipynb and layers.py)
-            - Summary: 
-              - Read Images from memory by accessing the zipfile object.
-              - We didn't extract the zip into the disk.
-              - We processed 10K images from the zipfile at a time in batches to avoid OOM and RAM issues.
-              - Changes made like, provided arguments for the batchsize and dataset selection range
-              - Made changes in utils.py w.r.t display_images and loading images.
-              - Changes made to save the depthmap images directly to google drive with file names (corelated with dataset name like..(x)_bg_(y)_fg.jpg)
-              - Without any issues we are able to process 5K images in 8-10 minutes
+  | S.No | Type                                  | Count       | Size      | Remarks                             |
+  | ---- | ------------------------------------- | ----------- | --------- | ----------------------------------- |
+  | 1    | Background (BG) - JPG                 | 100         | 224 x 224 | - Library(50) + Classroom(50).      |
+  | 2    | Background - Foreground (BG_FG) - JPG | 200K        | 224 x 224 | Created as part of 15-A assignment. |
+  | 3    | Mask                                  | 200k        | 224 x 224 | Ground Truth Image for Mask         |
+  | 4    | Depth Map                             | 200k        | 224 x 224 | Ground Truth Image for Depth Map    |
+  |      |                                       |             |           |                                     |
+  |      |                                       |             |           |                                     |
+  |      |                                       |             |           |                                     |
+  |      |                                       |             |           |                                     |
+  |      |                                       |             |           |                                     |
+  |      | **Total No. of Images**               | **600,100** |           |                                     |
 
   
+
+- 600k images are divided into 20 zip files  of 30k images each. 20 zip files are named from batch_1.zip to batch_20.zip. Each batch file contains the following folder structure (bg_fg_1, bg_fg_mask_1, depthMap). Each of these 3 folders contains 10k images. 
+
+  ![image-20200525165656117](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\image-20200525165656117.png)
+
+- All 20 zip files were uploaded to google drive link: https://drive.google.com/drive/folders/1mz9kCU1J1E7400dEPEJb_1gPqPaFWXIb?usp=sharing
+
+- 100 bg images were loaded into google drive same link as **bgimages.zip**
+
+- All 600,100 images were uniquely named so as to prevent any overwriting during extraction of any number of zip files into colab
+
+- After extraction of bgimages.zip and batch_<n>.zip files into colab the folder tree structure appears like:
+
+  - ![image-20200525172734340](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\image-20200525172734340.png)
+
+- Before trying big batches of images, various small batches (100, 500, 1000 etc) were loaded to test the memory consumption and speed. Even though I have a colab pro account, i tried these combinations to learn the memory/speed etc
+
+  **Custom TorchVision Data Loader Pipeline**
+
+  
+
+- Prepared a custom torchvision data set with input as bg_fg and bg images, ground truths as depthMap and mask images. Root dir is /content
+
+- Data pipeline flow for bg image was based on splitting bg_fg image name to get the bg image name and then load the corresponding bg image from /content/bg folder
+
+- Full data set was split into 70% and 30% for train and test respectively using the torch random_split technique
+
+- Batch size choice was tricky. After experimenting with batch sizes ranging from 16 to 512, size 16 was chosen for optimised memory consumption. Higher batch size was resulting in CUDA out of the memory 
+
+- Above data pipeline stratgey has been implemented in https://github.com/tusharkanta/ML_DL/blob/eva/S15/dataloader_s15.py file
+
+- Training in the batches and saving the state dictionaries:
+
+  - Trained with various combination of number of images to arrive at a combination of handling 50000 (bg_fg) images (5 zip files from batch_1 to batch_5 and so on) and corresponding bg images, GT images
+
+  - Though I was able to handle 100,000 bg_fg images (and corresponding 200k GT images) simultaneously, it was creating some javascript output displaying issue. I decided to go for 50k bg_fg images for one training/testing run. After each run model state was saved and reloaded in next run
+
+  - Given below is a  summary of training cycles:
+
+    - | Run No | Total Size of bg_fg images | Train Size | Test Size | Batch Size | Epochs |
+      | ------ | -------------------------- | ---------- | --------- | ---------- | ------ |
+      | 1      | 50,000                     | 35,000     | 15,000    | 16         | 10     |
+      | 2      | 50,000                     | 35,000     | 15,000    | 16         | 14     |
+      | 3      | 50,000                     | 35,000     | 15,000    | 16         | 14     |
+      | 4      | 30,000                     | 21,000     | 9,000     | 16         | 14     |
+      | 5      | 20,000                     | 14,000     | 6,000     | 16         | 14     |
+
+**Model Summary, train/test**
+
+​		Various models were tried. U-Net or U-Net like models gave better results. I ran with both U-Net with a Resnet kind of skip connection option on full dataset. I also ran a classic U-net model on a 30k bg-fg, 100 bg, 30k GT images. Models which take into account a global scene detection along with granular features concatenation are good choices. 
+
+**Model Parameters Count:**
+
+Custom Model (depthmax): 
+
+Total Parameters: 12,384,707
+
+Trainable Parameters: 12,384,707
+
+
+
+Classic U-Net model:
+
+Total Parameters: 10,882,432
+
+Trainable Parameters: 10,882,432
+
+
+
+For model definition please refer to the following link in github:
+
+https://github.com/tusharkanta/ML_DL/blob/eva/S15/model_def_s15_1.py
+
+
+
+**Loss function**
+
+BCE loss with logits (segmoid handled internally) is stable has been used for both image and text labels ground truth. For image pixel based tasks, SSIM and even Dice loss can be considered. I tried all 3 (BCE with logits), SSIM (with kernel size 3 and reduction method as mean) and Dice loss. BCE loss seems to be giving better result. SSIM loss produced blank depth image on U-Net and Dice Loss I could not configure as it was expecting int64 conversion of images which i tried but could not achieve.
+
+********Training and Test******
+
+Train was done on 70% of total datasets. While on custom depthmax model, total loss was fixed (2*mask loss + depth loss), I tried a different approach on U-Net model. On U-Net model i took total loss as only mask loss (ignored depth loss) for first few epochs and then took total as only depth loss (ignored mask loss) for subsequent epochs. This produced better result compared to a loss function having mixture of both. In test method, I saved the plot outputs in equal batch intervals in every epoch. Model state was stored in the end.
+
+For training and test please refer to the following link in github:
+
+https://github.com/tusharkanta/ML_DL/blob/eva/S15/model_train_s15_6.py
+
+For plotting and miscellaneous please refer to the following link:
+
+https://github.com/tusharkanta/ML_DL/blob/eva/S15/utils.py
+
+Training model and plot outputs are stored in google drive link:
+
+Custom-model outputs
+
+https://drive.google.com/drive/folders/1L9mOfceETJugJjY13khJJYuIViJs_McT?usp=sharing
+
+https://drive.google.com/drive/folders/1VXUDcNkJvZIhRLDzFtjx1C0Btl6Y4G2Z?usp=sharing
+
+U-Net ouput
+
+https://drive.google.com/drive/folders/1ZZaJQESgw_2W5BaRgWHjZMcxu8FHswH3?usp=sharing
+
+**Output Presentation**
+
+**After 1st epoch of Run 1 (50k bg-fg, 100 fg , 50k mask, 50k depth), validation (test dataset) output. For this run taking bg_fg image plot was missed out.**
+
+Ground Truth Mask:
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\50k\1stepoch\0_930_actual_mask.jpg)
+
+
+
+Predicted Mask:
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\50k\1stepoch\0_930_predicted_mask.jpg)
+
+skimage module's Structural Similarity index (SSIM) measure is a good way to calculate image similarities between 2 images and hence the accuracy prediction. 
+
+**SSIM index** for mask GT and prediction is **0.979**
+
+![image-20200525183102575](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\50k\1stepoch\image-20200525183102575.png)
+
+=====================================================
+
+Ground Truth Depth:
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\50k\1stepoch\0_930_actual_depth.jpg)
+
+
+
+Predicted Depth:
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\50k\1stepoch\0_930_predicted_depth.png)
+
+**SSIM index** for depth GT and prediction is **0.611**
+
+![image-20200525185332278](C:\Users\tusharkanta\AppData\Roaming\Typora\typora-user-images\image-20200525185332278.png)
+
+
+
+**After last epoch of Run 2 (total100k bg-fg, 100 fg , 100k mask, 100k depth), validation (test dataset) output.** 
+
+BG_FG Image:
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\13_930_actual_bg_fg.jpg)
+
+Ground Truth Mask:
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\13_930_actual_mask.jpg)
+
+
+
+Predicted Mask:
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\13_930_predicted_mask.jpg)
+
+**SSIM index** for mask GT and prediction is **0.98**
+
+![image-20200525191331074](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\image-20200525191331074.png)
+
+Ground Truth Depth:
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\13_930_actual_depth.jpg)
+
+Predicted Depth:
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\13_930_predicted_depth.png)
+
+**SSIM index** for depth GT and prediction is **0.602**
+
+![image-20200525191129185](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\image-20200525191129185.png)
+
+
+
+**After last epoch of last run (total 200k bg-fg, 100 fg , 200k mask, 200k depth), validation (test dataset) output.** 
+
+Actual BG-FG image
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\13_375_actual_bg_fg.jpg)
+
+
+
+Ground Truth Mask
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\13_375_actual_mask.jpg)
+
+Predicted Mask
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\13_375_predicted_mask.jpg)
+
+**SSIM index** for mask GT and prediction is **0.953**
+
+![image-20200525192603975](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\image-20200525192603975.png)
+
+
+
+Ground Truth Depth
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\13_375_actual_depth.jpg)
+
+Predicted Depth
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\13_375_predicted_depth.png)
+
+**SSIM index** for depth GT and prediction is **0.588**
+
+![image-20200525192349382](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\image-20200525192349382.png)
+
+
+
+UNet Model Output: This was run for one run (6 epochs) with 30k BG-FG images, 100 BG images, 30k Mask and 30k Depth GT. This model was run with mask loss as the only criteria (depth loss was ignored) for the first 3 epochs and then depth loss as the only criteria (mask loss ignored) for the subsequent 3 epochs.
+
+BG-FG image:
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\2_448_actual_bg_fg.jpg)
+
+Ground Truth Mask:
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\2_560_actual_mask.jpg)
+
+Predicted Mask:
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\2_560_predicted_mask.jpg)
+
+**SSIM index** for mask GT and prediction is **0.924**
+
+![image-20200525194301348](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\image-20200525194301348.png)
+
+After 6 epochs 
+
+BG-FG image
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\5_560_actual_bg_fg.jpg)
+
+Ground Truth Depth
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\5_560_actual_depth.jpg)
+
+Predicted Depth
+
+![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\5_560_predicted_depth.jpg)
+
+**SSIM index** for depth GT and prediction is **0.284**
+
+![image-20200525194444522](C:\Users\tusharkanta\AppData\Roaming\Typora\typora-user-images\image-20200525194444522.png)
 
 - **Submission**
 
   1. Share the link to the readme file for your Assignment 15A. Read the assignment again to make sure you do not miss any part which you need to explain. -2500
-     - https://github.com/tusharkanta/ML_DL/blob/eva/S15-A/Readme.md
+     
+  - https://github.com/tusharkanta/ML_DL/blob/eva/S15/Readme.md
+     
+  2. Share the link to note book links
+     
+     - las run on custom depthmax model : https://github.com/tusharkanta/ML_DL/blob/eva/S15/S15_Final_Phase1_EVA_lastrun.ipynb
+     - First run : https://github.com/tusharkanta/ML_DL/blob/eva/S15/S15_Final_Phase1_EVA.ipynb
+     - 2nd run: https://github.com/tusharkanta/ML_DL/blob/eva/S15/S15_Final_Phase1_EVA_2.ipynb
+     - 3rd run: https://github.com/tusharkanta/ML_DL/blob/eva/S15/S15_Final_Phase1_EVA_3.ipynb
+     - 4th run: https://github.com/tusharkanta/ML_DL/blob/eva/S15/S15_Final_Phase1_EVA_4.ipynb
+     
+  3. U-Net run notebook
 
-  2. Share the link to your notebook which you used to create this dataset. We are expecting to see how you manipulated images, overlay code, depth predictions. -250
-     - Github: https://github.com/tusharkanta/ML_DL/blob/eva/S15-A/DenseDepth.ipynb
+     ​     https://github.com/tusharkanta/ML_DL/blob/eva/S15/S15_Final_Phase1_EVA_unet.ipynb
 
   
