@@ -49,7 +49,7 @@
 
 - After extraction of bgimages.zip and batch_<n>.zip files into colab the folder tree structure appears like:
 
-  - ![image-20200525172734340](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\image-20200525172734340.png)
+  - ![image-20200525172734340](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/image-20200525172734340.png)
 
 - Before trying big batches of images, various small batches (100, 500, 1000 etc) were loaded to test the memory consumption and speed. Even though I have a colab pro account, i tried these combinations to learn the memory/speed etc
 
@@ -145,31 +145,31 @@ https://drive.google.com/drive/folders/1ZZaJQESgw_2W5BaRgWHjZMcxu8FHswH3?usp=sha
 
 Ground Truth Mask:
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\50k\1stepoch\0_930_actual_mask.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/50k/1stepoch/0_930_actual_mask.jpg)
 
 
 
 Predicted Mask:
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\50k\1stepoch\0_930_predicted_mask.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/50k/1stepoch/0_930_predicted_mask.jpg)
 
 skimage module's Structural Similarity index (SSIM) measure is a good way to calculate image similarities between 2 images and hence the accuracy prediction. 
 
 **SSIM index** for mask GT and prediction is **0.979**
 
-![image-20200525183102575](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\50k\1stepoch\image-20200525183102575.png)
+![image-20200525183102575](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/50k/1stepoch/image-20200525183102575.png)
 
 =====================================================
 
 Ground Truth Depth:
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\50k\1stepoch\0_930_actual_depth.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/50k/1stepoch/0_930_actual_depth.jpg)
 
 
 
 Predicted Depth:
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\50k\1stepoch\0_930_predicted_depth.png)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/50k/1stepoch/0_930_predicted_depth.png)
 
 **SSIM index** for depth GT and prediction is **0.611**
 
@@ -181,33 +181,33 @@ Predicted Depth:
 
 BG_FG Image:
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\13_930_actual_bg_fg.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/100k/lastepoch/13_930_actual_bg_fg.jpg)
 
 Ground Truth Mask:
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\13_930_actual_mask.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/100k/lastepoch/13_930_actual_mask.jpg)
 
 
 
 Predicted Mask:
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\13_930_predicted_mask.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/100k/lastepoch/13_930_predicted_mask.jpg)
 
 **SSIM index** for mask GT and prediction is **0.98**
 
-![image-20200525191331074](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\image-20200525191331074.png)
+![image-20200525191331074](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/100k/lastepoch/image-20200525191331074.png)
 
 Ground Truth Depth:
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\13_930_actual_depth.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/100k/lastepoch/13_930_actual_depth.jpg)
 
 Predicted Depth:
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\13_930_predicted_depth.png)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/100k/lastepoch/13_930_predicted_depth.png)
 
 **SSIM index** for depth GT and prediction is **0.602**
 
-![image-20200525191129185](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\100k\lastepoch\image-20200525191129185.png)
+![image-20200525191129185](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/100k/lastepoch/image-20200525191129185.png)
 
 
 
@@ -215,35 +215,35 @@ Predicted Depth:
 
 Actual BG-FG image
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\13_375_actual_bg_fg.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/200k/lastepoch/13_375_actual_bg_fg.jpg)
 
 
 
 Ground Truth Mask
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\13_375_actual_mask.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/200k/lastepoch/13_375_actual_mask.jpg)
 
 Predicted Mask
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\13_375_predicted_mask.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/200k/lastepoch/13_375_predicted_mask.jpg)
 
 **SSIM index** for mask GT and prediction is **0.953**
 
-![image-20200525192603975](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\image-20200525192603975.png)
+![image-20200525192603975](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/200k/lastepoch/image-20200525192603975.png)
 
 
 
 Ground Truth Depth
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\13_375_actual_depth.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/200k/lastepoch/13_375_actual_depth.jpg)
 
 Predicted Depth
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\13_375_predicted_depth.png)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/200k/lastepoch/13_375_predicted_depth.png)
 
 **SSIM index** for depth GT and prediction is **0.588**
 
-![image-20200525192349382](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\custom_model\200k\lastepoch\image-20200525192349382.png)
+![image-20200525192349382](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/200k/lastepoch/image-20200525192349382.png)
 
 
 
@@ -251,33 +251,33 @@ UNet Model Output: This was run for one run (6 epochs) with 30k BG-FG images, 10
 
 BG-FG image:
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\2_448_actual_bg_fg.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/classic_unet/2_448_actual_bg_fg.jpg)
 
 Ground Truth Mask:
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\2_560_actual_mask.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/classic_unet/2_560_actual_mask.jpg)
 
 Predicted Mask:
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\2_560_predicted_mask.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/classic_unet/2_560_predicted_mask.jpg)
 
 **SSIM index** for mask GT and prediction is **0.924**
 
-![image-20200525194301348](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\image-20200525194301348.png)
+![image-20200525194301348](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/classic_unet/image-20200525194301348.png)
 
 After 6 epochs 
 
 BG-FG image
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\5_560_actual_bg_fg.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/classic_unet/5_560_actual_bg_fg.jpg)
 
 Ground Truth Depth
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\5_560_actual_depth.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/classic_unet/5_560_actual_depth.jpg)
 
 Predicted Depth
 
-![](C:\Users\tusharkanta\Documents\MLDLGIT\gitrepos\ML_DL\S15\assets\classic_unet\5_560_predicted_depth.jpg)
+![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/classic_unet/5_560_predicted_depth.jpg)
 
 **SSIM index** for depth GT and prediction is **0.284**
 
