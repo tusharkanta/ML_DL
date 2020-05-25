@@ -47,6 +47,8 @@
 
 - All 600,100 images were uniquely named so as to prevent any overwriting during extraction of any number of zip files into colab
 
+- autotime module has been used to record timings automatically for each execution block. This did help a lot in measuring the performance.
+
 - After extraction of bgimages.zip and batch_<n>.zip files into colab the folder tree structure appears like:
 
   - ![image-20200525172734340](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/image-20200525172734340.png)
@@ -115,9 +117,9 @@ https://github.com/tusharkanta/ML_DL/blob/eva/S15/model_def_s15_1.py
 
 BCE loss with logits (segmoid handled internally) is stable has been used for both image and text labels ground truth. For image pixel based tasks, SSIM and even Dice loss can be considered. I tried all 3 (BCE with logits), SSIM (with kernel size 3 and reduction method as mean) and Dice loss. BCE loss seems to be giving better result. SSIM loss produced blank depth image on U-Net and Dice Loss I could not configure as it was expecting int64 conversion of images which i tried but could not achieve.
 
-********Training and Test******
+**Training and Test**
 
-Train was done on 70% of total datasets. While on custom depthmax model, total loss was fixed (2*mask loss + depth loss), I tried a different approach on U-Net model. On U-Net model i took total loss as only mask loss (ignored depth loss) for first few epochs and then took total as only depth loss (ignored mask loss) for subsequent epochs. This produced better result compared to a loss function having mixture of both. In test method, I saved the plot outputs in equal batch intervals in every epoch. Model state was stored in the end.
+Train was done on 70% of total datasets. While on custom depthmax model, total loss was fixed (2*mask loss + depth loss), I tried a different approach on U-Net model. On U-Net model I took total loss as only mask loss (ignored depth loss) for first few epochs and then took total as only depth loss (ignored mask loss) for subsequent epochs. This produced better result compared to a loss function having mixture of both. In test method, I saved the plot outputs in equal batch intervals in every epoch. Model state was stored in google drive for each run cycle. For test prediction accuracy, I calculated SSIM Index metrics from skimage structural similarity module. Please refer to output presentation below for the same.
 
 For training and test please refer to the following link in github:
 
@@ -153,7 +155,7 @@ Predicted Mask:
 
 ![](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/custom_model/50k/1stepoch/0_930_predicted_mask.jpg)
 
-skimage module's Structural Similarity index (SSIM) measure is a good way to calculate image similarities between 2 images and hence the accuracy prediction. 
+skimage module's Structural Similarity index (SSIM) measure is a good way to calculate image similarities between 2 images and hence it is a good tool calculate accuracy of predicted image. SSM index calcuated using the tool: https://github.com/tusharkanta/ML_DL/blob/eva/S15/ssim.py
 
 **SSIM index** for mask GT and prediction is **0.979**
 
