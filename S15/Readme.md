@@ -173,7 +173,7 @@ Predicted Depth:
 
 **SSIM index** for depth GT and prediction is **0.611**
 
-![image-20200525185332278](C:\Users\tusharkanta\AppData\Roaming\Typora\typora-user-images\image-20200525185332278.png)
+![image-20200525185332278](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/image-20200525185332278.png)
 
 
 
@@ -281,7 +281,7 @@ Predicted Depth
 
 **SSIM index** for depth GT and prediction is **0.284**
 
-![image-20200525194444522](C:\Users\tusharkanta\AppData\Roaming\Typora\typora-user-images\image-20200525194444522.png)
+![image-20200525194444522](https://github.com/tusharkanta/ML_DL/blob/eva/S15/assets/image-20200525194444522.png)
 
 - **Submission**
 
